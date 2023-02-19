@@ -1,0 +1,11 @@
+version: "3"
+services:
+  chatbot-gpt:
+    image: afifai/chatbot-gpt:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    environment:
+      OPENAPI_TOKEN: ${OPENAPI_TOKEN}
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+    restart: on-failure
